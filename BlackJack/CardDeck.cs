@@ -13,6 +13,12 @@ namespace BlackJack
         static Boolean isFirstCard = false;
         static List<int> deck = new List<int>();
         string[] figures = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+        protected int getValue(string f)
+        {
+            if (f == "A") return 11;
+            else if (Array.IndexOf(figures, f) > 8) return 10;
+            else return Array.IndexOf(figures, f)+1;
+        }
 
         #endregion fields
 
@@ -33,13 +39,20 @@ namespace BlackJack
         
         protected string deal(int i)
         {
-            return figures[deck.ElementAt(i)];
+            
+            return figures[(deck.ElementAt(i))%13];
+            
 
         }
         public void shuffle()
         {
             for (int j = 0; j < 4; j++)
                     for (int i = 1; i <= 13; i++) deck.Add(i);
+        }
+
+        public void removeCard(int i)
+        {
+            deck.RemoveAt(i);
         }
 
         #endregion
@@ -52,16 +65,23 @@ namespace BlackJack
         string figure;
         int value;
 
+
+
         public Card()
         {
-            MessageBox.Show("Card constructor");
-            Random rnd = new Random();
-            Console.WriteLine(getCardsLeft());
-            int index = rnd.Next(0, ((getCardsLeft())-1));
-            this.figure = deal(index);
-            Console.Write(this.figure);
             
+            MessageBox.Show("Card constructor");
+            //while (getCardsLeft() > 0){
+                Random rnd = new Random();
+                //Console.WriteLine(rnd.Next(0, (getCardsLeft() - 1)));
+                int index = rnd.Next(0, getCardsLeft() - 1);
+                this.figure = deal(index);
+                this.value = getValue(this.figure);
+                
+                Console.WriteLine(" " + this.figure);
 
+                Console.WriteLine(" " + this.value);
+                removeCard(index); //}
         }
            
 
