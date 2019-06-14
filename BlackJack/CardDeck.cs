@@ -10,10 +10,9 @@ namespace BlackJack
     class CardDeck
     {
         #region fields
-
+        static Boolean isFirstCard = false;
         static List<int> deck = new List<int>();
-        string[] figure = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-        CardDeck o;
+        string[] figures = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 
         #endregion fields
 
@@ -24,12 +23,17 @@ namespace BlackJack
         protected CardDeck()
         {
             MessageBox.Show("CardDeck constructor");
+            if (isFirstCard == false)
+            {
+                shuffle();
+                isFirstCard = true;
+            }
 
         }
         
         protected string deal(int i)
         {
-            return figure[deck.ElementAt(i)];
+            return figures[deck.ElementAt(i)];
 
         }
         public void shuffle()
@@ -48,11 +52,12 @@ namespace BlackJack
         string figure;
         int value;
 
-        Card()
+        public Card()
         {
             MessageBox.Show("Card constructor");
             Random rnd = new Random();
-            int index = rnd.Next(0, getCardsLeft() - 1);
+            Console.WriteLine(getCardsLeft());
+            int index = rnd.Next(0, ((getCardsLeft())-1));
             this.figure = deal(index);
             Console.Write(this.figure);
             
