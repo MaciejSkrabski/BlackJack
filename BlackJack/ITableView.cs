@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    interface ITableView
+    public interface ITableView
     {
+        
         int CardsLeft { get; }
 
         string CroupiersHand { set; }
