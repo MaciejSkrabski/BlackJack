@@ -8,8 +8,17 @@ namespace BlackJack
 {
     class Presenter
     {
-        ITableView _view;
-        Game _game;
+        ITableView view;
+        Game game;
+
+        public Presenter(ITableView view, Game game)
+
+        {
+            this.view = view;
+            this.game = game;
+
+
+        }
         
 
     }

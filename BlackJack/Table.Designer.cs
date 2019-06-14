@@ -46,6 +46,7 @@
             this.hit.TabIndex = 0;
             this.hit.Text = "Hit";
             this.hit.UseVisualStyleBackColor = true;
+            this.hit.Click += new System.EventHandler(this.hit_Click);
             // 
             // stand
             // 

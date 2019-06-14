@@ -12,6 +12,7 @@ namespace BlackJack
 {
     public partial class Table : Form, ITableView
     {
+        public event Action Hit;
         public Table()
         {
             InitializeComponent();
@@ -69,6 +70,11 @@ namespace BlackJack
         private void Stand_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void hit_Click(object sender, EventArgs e)
+        {
+            //setHitTrue;
         }
     }
 }

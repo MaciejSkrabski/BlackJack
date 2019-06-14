@@ -150,7 +150,8 @@ namespace BlackJack
         bool clickStand;
 
         public void setStand(bool button) { this.clickStand = true; }
-        public void setHit(bool button) { this.clickHit = true; }
+        public void setHitTrue() { this.clickHit = true; }
+        public void setHitFalse() { this.clickHit = false; }
         public bool getHit() { return this.clickHit; }
         public bool getStand() { return this.clickStand; }
         public Game() {
@@ -175,6 +176,8 @@ namespace BlackJack
                         if (getHit() == true)
                         {
                             p1.Draw();
+                            setHitFalse();
+                            
                         }
 
 
