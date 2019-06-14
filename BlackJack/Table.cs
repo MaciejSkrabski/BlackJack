@@ -66,7 +66,7 @@ namespace BlackJack
             MessageBox.Show("Welcome to \"Poor Man's BlackJack\" \n\tby Maciej Skrabski\nPlay against the croupier AI. \nThis is much simpler than the real blackjack, because:\n\t#1 I hate gambling\n\t#2 The idea of making a bet, even with fictional currency, disgusts me\n\t#3 Just kidding with the first two. I'm just a beginner programmer and this is but a academic task.");
         }
 
-        private void stand_Click(object sender, EventArgs e)
+        private void Stand_Click(object sender, EventArgs e)
         {
             
         }

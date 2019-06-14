@@ -8,7 +8,7 @@ namespace BlackJack
 {
     interface ITableView
     {
-        int CardsLeft { set; get; }
+        int CardsLeft { get; }
 
         string CroupiersHand { set; }
         string PlayersHand { set; }

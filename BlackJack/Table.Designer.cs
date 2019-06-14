@@ -56,7 +56,7 @@
             this.stand.TabIndex = 1;
             this.stand.Text = "Stand";
             this.stand.UseVisualStyleBackColor = true;
-            this.stand.Click += new System.EventHandler(this.stand_Click);
+            this.stand.Click += new System.EventHandler(this.Stand_Click);
             // 
             // labelYourHand
             // 
