@@ -12,10 +12,11 @@ namespace BlackJack
 {
     public partial class Table : Form, ITableView
     {
-        public event Action Hit;
         public Table()
         {
+
             InitializeComponent();
+           
 
 
         }
@@ -55,12 +56,18 @@ namespace BlackJack
 
         }
 
-    public int PlayersHandValue
+        public int PlayersHandValue
         {
             get { return 6; }
 
             set { }
         }
+
+        public event Action H;
+        public event Action S;
+
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -69,12 +76,14 @@ namespace BlackJack
 
         private void Stand_Click(object sender, EventArgs e)
         {
-            
+            S?.Invoke();
         }
 
         private void hit_Click(object sender, EventArgs e)
         {
-            //setHitTrue;
+            //Hit.Invoke();
+            H?.Invoke();
         }
     }
 }
+

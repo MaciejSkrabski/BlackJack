@@ -17,6 +17,12 @@ namespace BlackJack
             this.view = view;
             this.game = game;
 
+            this.view.H += this.game.getHit();
+
+
+
+
+
 
         }
         

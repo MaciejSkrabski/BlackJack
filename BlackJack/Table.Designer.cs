@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hit = new System.Windows.Forms.Button();
+            this.Hit = new System.Windows.Forms.Button();
             this.stand = new System.Windows.Forms.Button();
             this.labelYourHand = new System.Windows.Forms.Label();
             this.labelCroupiersHand = new System.Windows.Forms.Label();
@@ -39,14 +39,14 @@
             // 
             // hit
             // 
-            this.hit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.hit.Location = new System.Drawing.Point(688, 312);
-            this.hit.Name = "hit";
-            this.hit.Size = new System.Drawing.Size(100, 60);
-            this.hit.TabIndex = 0;
-            this.hit.Text = "Hit";
-            this.hit.UseVisualStyleBackColor = true;
-            this.hit.Click += new System.EventHandler(this.hit_Click);
+            this.Hit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.Hit.Location = new System.Drawing.Point(688, 312);
+            this.Hit.Name = "hit";
+            this.Hit.Size = new System.Drawing.Size(100, 60);
+            this.Hit.TabIndex = 0;
+            this.Hit.Text = "Hit";
+            this.Hit.UseVisualStyleBackColor = true;
+            this.Hit.Click += new System.EventHandler(this.hit_Click);
             // 
             // stand
             // 
@@ -121,7 +121,7 @@
             this.Controls.Add(this.labelCroupiersHand);
             this.Controls.Add(this.labelYourHand);
             this.Controls.Add(this.stand);
-            this.Controls.Add(this.hit);
+            this.Controls.Add(this.Hit);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -139,7 +139,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button hit;
+        private System.Windows.Forms.Button Hit;
         private System.Windows.Forms.Button stand;
         private System.Windows.Forms.Label labelYourHand;
         private System.Windows.Forms.Label labelCroupiersHand;

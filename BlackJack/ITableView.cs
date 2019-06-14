@@ -14,5 +14,8 @@ namespace BlackJack
         string PlayersHand { set; }
         int CroupiersHandValue { get; set; }
         int PlayersHandValue { get; set; }
+        event Action H;
+        event Action S;
+
     }
 }
