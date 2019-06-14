@@ -160,6 +160,7 @@ namespace BlackJack
         public bool getHit() { return this.clickHit; }
         public bool getStand() { return this.clickStand; }
         public void setCardsLeft(int x) { this.cardsleft = x; }
+        public void setStandTrue() { this.clickStand = true; }
         public int getCardsLeft() { return this.cardsleft;  }
         public void setAICardsValue(int x) { this.AICardsValue = x; }
         public int getAICardsValue() { return this.AICardsValue; }
