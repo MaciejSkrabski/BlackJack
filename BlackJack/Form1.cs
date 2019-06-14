@@ -21,5 +21,11 @@ namespace BlackJack
         {
 
         }
+
+        private void stand_Click(object sender, EventArgs e)
+        {
+            Card haba = new Card();
+            haba.shuffle();
+        }
     }
 }
