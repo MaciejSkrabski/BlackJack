@@ -32,6 +32,7 @@
             this.stand = new System.Windows.Forms.Button();
             this.labelYourHand = new System.Windows.Forms.Label();
             this.labelCroupiersHand = new System.Windows.Forms.Label();
+            this.labelCardsLeft = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hit
@@ -75,12 +76,23 @@
             this.labelCroupiersHand.TabIndex = 3;
             this.labelCroupiersHand.Text = "Croupier\'s Hand:";
             // 
+            // labelCardsLeft
+            // 
+            this.labelCardsLeft.AutoSize = true;
+            this.labelCardsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.labelCardsLeft.Location = new System.Drawing.Point(571, 158);
+            this.labelCardsLeft.Name = "labelCardsLeft";
+            this.labelCardsLeft.Size = new System.Drawing.Size(148, 31);
+            this.labelCardsLeft.TabIndex = 4;
+            this.labelCardsLeft.Text = "Cards Left:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelCardsLeft);
             this.Controls.Add(this.labelCroupiersHand);
             this.Controls.Add(this.labelYourHand);
             this.Controls.Add(this.stand);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button stand;
         private System.Windows.Forms.Label labelYourHand;
         private System.Windows.Forms.Label labelCroupiersHand;
+        private System.Windows.Forms.Label labelCardsLeft;
     }
 }
 

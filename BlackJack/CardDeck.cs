@@ -9,37 +9,57 @@ namespace BlackJack
 {
     class CardDeck
     {
+        #region fields
+
+        static List<int> deck = new List<int>();
+        string[] figure = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+        CardDeck o;
+
+        #endregion fields
+
+        #region methods
+
+        public int getCardsLeft() { return deck.Count(); }
 
         protected CardDeck()
         {
-
-
-            MessageBox.Show("CardDeck");
+            MessageBox.Show("CardDeck constructor");
 
         }
+        
+        protected string deal(int i)
+        {
+            return figure[deck.ElementAt(i)];
 
-        static List<int> deck = new List<int>();
-
-        string[] figure = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-
+        }
         public void shuffle()
         {
             for (int j = 0; j < 4; j++)
                     for (int i = 1; i <= 13; i++) deck.Add(i);
-            deck.ForEach(Console.WriteLine);
         }
+
+        #endregion
     }
 
 
 
-        class Card : CardDeck
-        {
-            public Card() { MessageBox.Show("Card"); }
-            string figure;
-            int value;
+    class Card : CardDeck
+    {
+        string figure;
+        int value;
 
-//      Random rnd = new Random();
-// int index = rnd.Next(0, deck.Count() - 1);
+        Card()
+        {
+            MessageBox.Show("Card constructor");
+            Random rnd = new Random();
+            int index = rnd.Next(0, getCardsLeft() - 1);
+            this.figure = deal(index);
+            Console.Write(this.figure);
+            
+
+        }
+           
+
 
     }
     
