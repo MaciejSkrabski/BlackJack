@@ -145,6 +145,11 @@ namespace BlackJack
 
     class Game
     {
+        int cardsleft;
+        int p1CardsValue;
+        int AICardsValue;
+        int p1Wins;
+        int AIwins;
         
         bool clickHit;
         bool clickStand;
@@ -154,19 +159,41 @@ namespace BlackJack
         public void setHitFalse() { this.clickHit = false; }
         public bool getHit() { return this.clickHit; }
         public bool getStand() { return this.clickStand; }
+        public void setCardsLeft(int x) { this.cardsleft = x; }
+        public int getCardsLeft() { return this.cardsleft;  }
+        public void setAICardsValue(int x) { this.AICardsValue = x; }
+        public int getAICardsValue() { return this.AICardsValue; }
+        public void setp1CardsValue(int x) { this.p1CardsValue = x; }
+        public int getp1CardsValue() { return this.p1CardsValue; }
+        public void incrementP1Wins() { this.p1Wins +=1; }
+        public void incrementAIWins() { this.AIwins += 1; }
+        public int getp1Wins() { return p1Wins; }
+        public int getAIwins() { return this.AIwins; }
+
+
         public Game() {
-            
+            this.p1Wins = 0;
+            this.AIwins = 0;
+            int cardsleft = 52;
             Player p1 = new Player();
             Player AI = new Player();
-            int cardsLeft = p1.GetCardsLeft();
-            while (cardsLeft > 5)
+            this.cardsleft = p1.GetCardsLeft();
+            while (cardsleft > 5)
             {
+                AI.ClearHand();
+                p1.ClearHand();
+
                 AI.Draw();
                 p1.Draw();
                 p1.Draw();
+                this.cardsleft = p1.GetCardsLeft();
+                getAICardsValue();
                 if(p1.GetCardsValue() == 22)
             {
+                    setCardsLeft(p1.GetCardsLeft());
                     p1.AddWin();
+                    incrementP1Wins();
+
                     p1.ClearHand();
                     AI.ClearHand();
                     MessageBox.Show("BLACKJACK!");
@@ -176,12 +203,37 @@ namespace BlackJack
                         if (getHit() == true)
                         {
                             p1.Draw();
+                            if (p1.GetCardsValue() > 21) { MessageBox.Show("Bust!;"); AI.AddWin(); p1.ClearHand(); AI.ClearHand(); }
                             setHitFalse();
-                            
+                            setCardsLeft(p1.GetCardsLeft());
+
                         }
+                        
 
 
                     }
+
+                    if (AI.GetCardsValue() == 22)
+                    {
+                        setCardsLeft(p1.GetCardsLeft());
+                        AI.AddWin();
+                        incrementAIWins();
+                        p1.ClearHand();
+                        AI.ClearHand();
+                        MessageBox.Show("BLACKJACK!");
+                        setCardsLeft(p1.GetCardsLeft());
+                    }
+                    else
+                    {
+                        while (AI.GetCardsValue() < p1.GetCardsValue())
+                        {
+                            AI.Draw();
+                            if (AI.GetCardsValue() > 21) { MessageBox.Show("Bust!;"); p1.AddWin(); p1.ClearHand(); AI.ClearHand(); }
+                            setCardsLeft(p1.GetCardsLeft());
+                        }
+                        if (p1.GetCardsValue() < AI.GetCardsValue()) { AI.AddWin(); incrementAIWins(); }
+                    }
+
                 }
             }
 
