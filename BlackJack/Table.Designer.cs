@@ -1,6 +1,6 @@
 ﻿namespace BlackJack
 {
-    partial class Form1
+    partial class Table
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,8 @@
             this.labelYourHand = new System.Windows.Forms.Label();
             this.labelCroupiersHand = new System.Windows.Forms.Label();
             this.labelCardsLeft = new System.Windows.Forms.Label();
+            this.croupiersHandValue = new System.Windows.Forms.Label();
+            this.playersHandValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hit
@@ -60,7 +62,7 @@
             // 
             this.labelYourHand.AutoSize = true;
             this.labelYourHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.labelYourHand.Location = new System.Drawing.Point(12, 407);
+            this.labelYourHand.Location = new System.Drawing.Point(78, 407);
             this.labelYourHand.Name = "labelYourHand";
             this.labelYourHand.Size = new System.Drawing.Size(151, 31);
             this.labelYourHand.TabIndex = 2;
@@ -86,12 +88,34 @@
             this.labelCardsLeft.TabIndex = 4;
             this.labelCardsLeft.Text = "Cards Left:";
             // 
-            // Form1
+            // croupiersHandValue
+            // 
+            this.croupiersHandValue.AutoSize = true;
+            this.croupiersHandValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.croupiersHandValue.Location = new System.Drawing.Point(138, 40);
+            this.croupiersHandValue.Name = "croupiersHandValue";
+            this.croupiersHandValue.Size = new System.Drawing.Size(91, 31);
+            this.croupiersHandValue.TabIndex = 5;
+            this.croupiersHandValue.Text = "Value:";
+            // 
+            // playersHandValue
+            // 
+            this.playersHandValue.AutoSize = true;
+            this.playersHandValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.playersHandValue.Location = new System.Drawing.Point(138, 376);
+            this.playersHandValue.Name = "playersHandValue";
+            this.playersHandValue.Size = new System.Drawing.Size(91, 31);
+            this.playersHandValue.TabIndex = 6;
+            this.playersHandValue.Text = "Value:";
+            // 
+            // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.playersHandValue);
+            this.Controls.Add(this.croupiersHandValue);
             this.Controls.Add(this.labelCardsLeft);
             this.Controls.Add(this.labelCroupiersHand);
             this.Controls.Add(this.labelYourHand);
@@ -102,7 +126,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "Form1";
+            this.Name = "Table";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Black Jack";
@@ -119,6 +143,8 @@
         private System.Windows.Forms.Label labelYourHand;
         private System.Windows.Forms.Label labelCroupiersHand;
         private System.Windows.Forms.Label labelCardsLeft;
+        private System.Windows.Forms.Label croupiersHandValue;
+        private System.Windows.Forms.Label playersHandValue;
     }
 }
 
