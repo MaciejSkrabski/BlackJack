@@ -28,7 +28,7 @@ namespace BlackJack
 
         public int GetCardsLeft() { this.cardsLeft = deck.Count(); return deck.Count(); }
 
-        protected CardDeck()
+        public CardDeck()
         {
             MessageBox.Show("CardDeck constructor");
             if (isFirstCard == false)

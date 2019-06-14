@@ -17,16 +17,28 @@ namespace BlackJack
             this.view = view;
             this.game = game;
 
-            this.view.H += this.game.setHitTrue;
-            this.view.S += this.game.setStandTrue;
-
+            this.view.H += View_H;
+            this.view.S += View_S;
+            
 
 
 
 
 
         }
-        
 
+        public Presenter()
+        {
+        }
+
+        private void View_S()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void View_H()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

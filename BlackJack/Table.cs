@@ -14,11 +14,10 @@ namespace BlackJack
     {
         public Table()
         {
-
+            
             InitializeComponent();
-           
-
-
+            
+            //IViewTable view = table;
         }
 
         public int CardsLeft

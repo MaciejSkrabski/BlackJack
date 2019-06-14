@@ -17,6 +17,9 @@ namespace BlackJack
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Table());
+            CardDeck carddeck = new CardDeck();
+            ITableView view = new Table();
+            Presenter pres = new Presenter();
         }
     }
 }
